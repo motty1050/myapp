@@ -1,0 +1,32 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Django
+db.sqlite3
+media/
+
+# ── Backend の無視項目 ──────────────────────
+/backend/venv/
+/backend/__pycache__/
+/backend/*.py[cod]
+/backend/db.sqlite3
+
+# ── Frontend の無視項目 ─────────────────────
+/frontend/node_modules/
+/frontend/build/
+
+# ── 共通エディタ・OS の無視項目 ────────────
+*.swp
+.DS_Store
+
+
+# Node / React
+../frontend/node_modules/
+../frontend/build/
+
+# Editor / OS
+*.swp
+.DS_Store
