@@ -4,7 +4,11 @@ from .models import MLApp, PredictionLog
 class MLAppSerializer(serializers.ModelSerializer):
     class Meta:
         model = MLApp
-        fields = ['id', 'name', 'description', 'is_active']
+        fields = [
+            'id', 'name', 'description', 'app_type', 'device_type',
+            'classes', 'batch_size', 'use_mixed_precision', 
+            'model_optimization', 'is_active', 'created_at'
+        ]
 
 class PredictionInputSerializer(serializers.Serializer):
     """推論入力データのシリアライザ"""
