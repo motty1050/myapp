@@ -1,32 +1,70 @@
-# Python
-venv/
+# ── Python / Django ───────────────────────
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 *.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Django
-db.sqlite3
-media/
+# ── Django specific ───────────────────────
+backend/db.sqlite3
+backend/media/
+backend/staticfiles/
+backend/.env
 
-# ── Backend の無視項目 ──────────────────────
-/backend/venv/
-/backend/__pycache__/
-/backend/*.py[cod]
-/backend/db.sqlite3
+# ── Virtual environments ──────────────────
+backend/venv/
+backend/env/
+ENV/
+env/
+venv/
 
-# ── Frontend の無視項目 ─────────────────────
-/frontend/node_modules/
-/frontend/build/
+# ── Node.js / React ───────────────────────
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
 
-# ── 共通エディタ・OS の無視項目 ────────────
+# ── IDE / Editor ──────────────────────────
+.vscode/
+.idea/
 *.swp
+*.swo
+*~
+
+# ── OS specific ───────────────────────────
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
+# ── Logs ──────────────────────────────────
+*.log
+logs/
 
-# Node / React
-../frontend/node_modules/
-../frontend/build/
-
-# Editor / OS
-*.swp
-.DS_Store
+# ── Temporary files ───────────────────────
+*.tmp
+*.temp
