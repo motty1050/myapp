@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "CUDA画像分類",
+  "name": "CUDA対応高速画像分類システム",
   "icons": [
     {
       "src": "favicon.ico",
