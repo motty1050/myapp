@@ -84,6 +84,29 @@ npm start
 - ✅ Reactフロントエンド
 - ✅ REST API
 - ✅ CORS対応
+- ✅ Streamlit高齢化率分析アプリ
+- ✅ 政府統計データ対応
+- ✅ 日本語ローカライゼーション
+
+## Streamlitアプリ
+
+### 高齢化率分析アプリ
+
+- `streamlit_aging_analysis.py` - メイン版（政府統計データ対応）
+- `streamlit_upload_version.py` - ファイルアップロード版
+- `streamlit_simple_analysis.py` - シンプル版
+
+実行方法:
+
+```bash
+# メイン版
+streamlit run streamlit_aging_analysis.py
+
+# ファイルアップロード版
+streamlit run streamlit_upload_version.py --server.port 8503
+```
+
+詳細は `README_streamlit.md` を参照してください。
 
 ## 今後の拡張予定
 
