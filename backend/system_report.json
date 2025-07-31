@@ -1,0 +1,65 @@
+{
+  "timestamp": "2025-07-28T10:21:40.424928",
+  "system_info": {
+    "device_type": "cpu",
+    "device_name": "cpu"
+  },
+  "database_status": {
+    "total_apps": 3,
+    "apps": [
+      {
+        "id": 5,
+        "name": "CUDA高速画像分類",
+        "app_type": "image_classification",
+        "device_type": "auto",
+        "batch_size": 4,
+        "use_mixed_precision": true,
+        "is_active": true
+      },
+      {
+        "id": 6,
+        "name": "CPU画像分類",
+        "app_type": "image_classification",
+        "device_type": "cpu",
+        "batch_size": 1,
+        "use_mixed_precision": false,
+        "is_active": true
+      },
+      {
+        "id": 7,
+        "name": "混合精度テストアプリ",
+        "app_type": "image_classification",
+        "device_type": "auto",
+        "batch_size": 8,
+        "use_mixed_precision": true,
+        "is_active": true
+      }
+    ]
+  },
+  "cuda_inference": {
+    "status": "success",
+    "predicted_class": "cat",
+    "confidence": 0.5878655314445496,
+    "processing_time": 0.0319972038269043,
+    "device": "cpu"
+  },
+  "api_endpoints": {
+    "available_endpoints": [
+      "GET /api/ml-apps/ - MLアプリ一覧取得",
+      "GET /api/ml-apps/{id}/ - MLアプリ詳細取得",
+      "POST /api/ml-apps/{id}/predict/ - 画像予測",
+      "POST /api/ml-apps/{id}/benchmark/ - ベンチマーク実行",
+      "POST /api/ml-apps/{id}/predict_batch/ - バッチ予測",
+      "GET /api/logs/ - 予測ログ一覧"
+    ],
+    "base_url": "http://localhost:8000",
+    "authentication": "なし（開発環境）"
+  },
+  "performance": {
+    "total_time": 1.423452377319336,
+    "average_time_per_inference": 0.028469047546386718,
+    "throughput_fps": 35.12586778221598,
+    "device": "cpu",
+    "iterations": 50
+  }
+}
