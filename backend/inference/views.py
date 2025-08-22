@@ -4,18 +4,39 @@ import logging
 from io import BytesIO
 from PIL import Image
 from rest_framework import viewsets, status
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, JSONParser
 from django.utils import timezone
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
+from django.http import JsonResponse
 
 from .models import MLApp, PredictionLog, ImageUpload
 from .serializers import MLAppSerializer, PredictionInputSerializer, PredictionOutputSerializer, PredictionLogSerializer
 from .cuda_inference import get_classifier
 
 logger = logging.getLogger(__name__)
+
+@api_view(['GET'])
+def api_root(request):
+    """API情報ルート"""
+    return Response({
+        'message': 'ML推論API',
+        'version': '1.0.0',
+        'endpoints': {
+            'ml_apps': '/api/ml-apps/',
+            'logs': '/api/logs/',
+            'admin': '/admin/',
+        },
+        'available_actions': {
+            'predict': 'POST /api/ml-apps/{id}/predict/',
+            'batch_predict': 'POST /api/ml-apps/{id}/predict_batch/',
+            'device_info': 'GET /api/ml-apps/{id}/device_info/',
+            'benchmark': 'POST /api/ml-apps/{id}/benchmark/',
+        },
+        'status': 'running'
+    })
 
 class MLAppViewSet(viewsets.ReadOnlyModelViewSet):
     """ML アプリの一覧・詳細取得"""
